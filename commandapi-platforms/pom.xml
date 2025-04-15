@@ -31,6 +31,9 @@
 		</profile>
 		<profile>
 			<id>Platform.Velocity</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<modules>
 				<module>commandapi-velocity</module>
 				<module>../commandapi-kotlin/commandapi-core-kotlin</module>
