@@ -64,11 +64,21 @@
 							<filters>
 								<filter>
 									<artifact>dev.jorel:commandapi-core</artifact>
+									<!-- Don't relocate main class because velocity plugin annotator does not respect shading -->
 									<excludes>
 										<exclude>dev/jorel/commandapi/CommandAPIVersionHandler**</exclude>
 									</excludes>
 								</filter>
 							</filters>
+							<relocations>
+								<relocation>
+									<pattern>dev.jorel.commandapi</pattern>
+									<shadedPattern>dev.jorel.commandapi.velocity</shadedPattern>
+									<excludes>
+										<exclude>dev.jorel.commandapi.CommandAPIMain</exclude>
+									</excludes>
+								</relocation>
+							</relocations>
 						</configuration>
 					</execution>
 				</executions>
